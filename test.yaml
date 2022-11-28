@@ -1,0 +1,15 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: testweb
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: web
+    spec:
+      containers:
+      - image: 871459716950.dkr.ecr.ap-northeast-2.amazonaws.com/test-ecr:later
+        name: web
+      
