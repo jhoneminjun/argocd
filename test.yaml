@@ -1,9 +1,14 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: testweb
+  name: web-deployment
+  labels:
+    app: web
 spec:
   replicas: 2
+  selector:
+    matchLabels:
+       app: web
   template:
     metadata:
       labels:
@@ -11,5 +16,4 @@ spec:
     spec:
       containers:
       - image: 871459716950.dkr.ecr.ap-northeast-2.amazonaws.com/test-ecr:later
-        name: web
-      
+        name: web-nginx
