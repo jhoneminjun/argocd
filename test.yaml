@@ -2,6 +2,8 @@ apiVersion: v1    #namespace생성
 kind: Namespace
 metadata:
   name: nginx
+  
+---
 
 apiVersion: apps/v1
 kind: Deployment
