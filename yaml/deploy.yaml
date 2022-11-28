@@ -16,5 +16,5 @@ spec:
         app: web
     spec:
       containers:
-      - image: 871459716950.dkr.ecr.ap-northeast-2.amazonaws.com/test-ecr:ver38
+      - image: 871459716950.dkr.ecr.ap-northeast-2.amazonaws.com/test-ecr:ver39
         name: web-nginx
