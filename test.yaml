@@ -4,16 +4,16 @@ metadata:
   name: web-deployment
   namespace: nginx
   labels:
-    app: web
+    app: was
 spec:
   replicas: 1
   selector:
     matchLabels:
-       app: web
+       app: was
   template:
     metadata:
       labels:
-        app: web
+        app: was
     spec:
       containers:
       - image: 548021806095.dkr.ecr.ap-northeast-2.amazonaws.com/test-ecr:main8
