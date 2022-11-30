@@ -16,5 +16,5 @@ spec:
         app: was
     spec:
       containers:
-      - image: minjunun/ik:v1130
+      - image: 548021806095.dkr.ecr.ap-northeast-2.amazonaws.com/test-ecr:main11
         name: web-nginx
