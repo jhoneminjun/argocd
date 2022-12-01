@@ -2,7 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: web-login
-  namespace: nginx
   labels:
     app: web
 spec:
@@ -18,3 +17,5 @@ spec:
       containers:
       - image: 548021806095.dkr.ecr.ap-northeast-2.amazonaws.com/test-ecr:login1
         name: web-login
+        port:
+        - containerPort: 3000
