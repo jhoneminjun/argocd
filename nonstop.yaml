@@ -28,5 +28,5 @@ spec:
         app: nonstop
     spec:
       containers:
-      - image: 548021806095.dkr.ecr.ap-northeast-2.amazonaws.com/test-ecr:nonstop16
+      - image: 548021806095.dkr.ecr.ap-northeast-2.amazonaws.com/test-ecr:nonstop17
         name: nonstop
