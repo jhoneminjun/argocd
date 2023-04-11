@@ -1,0 +1,38 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: aws-alb
+  annotations:
+    kubernetes.io/ingress.class: alb
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/target-type: ip
+    external-dns.alpha.kubernetes.io/hostname: www.smartsubwaysystem.cloud
+    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:ap-northeast-2:880363532320:certificate/c6ffaf80-6937-4cfe-8bc2-8f378839b9a9
+    alb.ingress.kubernetes.io/ssl-redirect: '443'
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS":443}]'
+spec:
+  rules:
+  - host: www.smartsubwaysystem.cloud  
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: web-nodeport
+            port:
+              number: 80
+      - path: /nonstopsys
+        pathType: Prefix
+        backend:
+          service:
+            name: nonstop-nodeport
+            port:
+              number: 80
+      - path: /board
+        pathType: Prefix
+        backend:
+          service:
+            name: board-nodeport
+            port:
+              number: 80
